@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Semanal</title>
+  <style>
+    table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    input { width: 120px; text-align: center; }
+    .total { font-weight: bold; background: #f0f0f0; }
+    button { margin: 5px; padding: 5px 10px; }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Registro de Tareas Semanales</h2>
+  <table id="tabla">
+    <thead>
+      <tr>
+        <th>Responsable</th>
+        <th>Tarea</th>
+        <th>Días invertidos</th>
+        <th>Porcentaje (%)</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-tareas"></tbody>
+    <tfoot>
+      <tr class="total">
+        <td colspan="2">Total</td>
+        <td id="total-dias">0</td>
+        <td id="total-porcentaje">0%</td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div style="text-align:center;">
+    <input id="resp" placeholder="Responsable">
+    <input id="task" placeholder="Tarea">
+    <input id="days" type="number" min="0" max="5" placeholder="Días">
+    <button id="btnAgregar">➕ Agregar tarea</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
