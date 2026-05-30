@@ -64,8 +64,8 @@ function eliminarTarea(id) {
     .then(() => cargarTareas());
 }
 
-// Asignar evento directamente
-document.getElementById("btnAgregar").addEventListener("click", guardarTarea);
-
-// Cargar tareas al inicio
-cargarTareas();
+// ✅ Asegurar que el DOM esté listo
+window.onload = function() {
+  document.getElementById("btnAgregar").addEventListener("click", guardarTarea);
+  cargarTareas();
+};
